@@ -1,0 +1,91 @@
+package com.copypasteinc.android.mcc;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import org.w3c.dom.Text;
+
+public class MainActivity extends AppCompatActivity {
+
+    private EditText input1;
+    private EditText input2;
+    private Button mAdd;
+    private Button mSub;
+    private Button mMul;
+    private Button mDiv;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        input1=(EditText) findViewById(R.id.input1);
+        input2=(EditText) findViewById(R.id.input2);
+        mAdd=(Button) findViewById(R.id.add_btn);
+        mSub=(Button) findViewById(R.id.sub_btn);
+        mMul=(Button) findViewById(R.id.mul_btn);
+        mDiv=(Button) findViewById(R.id.div_btn);
+
+        input1=(EditText) findViewById(R.id.input1);
+        input2=(EditText) findViewById(R.id.input2);
+        mAdd=(Button) findViewById(R.id.add_btn);
+        mSub=(Button) findViewById(R.id.sub_btn);
+        mMul=(Button) findViewById(R.id.mul_btn);
+        mDiv=(Button) findViewById(R.id.div_btn);
+
+
+
+        mAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                double n1=Double.parseDouble(input1.getText().toString());
+                double n2=Double.parseDouble(input2.getText().toString());
+                double add=n1+n2;
+                String answer="addition is "+add;
+                Toast toast=Toast.makeText(getApplicationContext(),answer,Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        });
+
+        mSub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                double n1=Double.parseDouble(input1.getText().toString());
+                double n2=Double.parseDouble(input2.getText().toString());
+                double sub=n1-n2;
+                String answer="subtraction is "+sub;
+                Toast toast=Toast.makeText(getApplicationContext(),answer,Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        });
+
+        mMul.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                double n1=Double.parseDouble(input1.getText().toString());
+                double n2=Double.parseDouble(input2.getText().toString());
+                double mul=n1*n2;
+                String answer="multiplication is "+mul;
+                Toast toast=Toast.makeText(getApplicationContext(),answer,Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        });
+
+        mDiv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                double n1=Double.parseDouble(input1.getText().toString());
+                double n2=Double.parseDouble(input2.getText().toString());
+                double div=n1/n2;
+                String answer="division is "+div;
+                Toast toast=Toast.makeText(getApplicationContext(),answer,Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        });
+    }
+}
