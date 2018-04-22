@@ -1,0 +1,73 @@
+import java.util.*;
+
+class exp11{
+        public static void main(String args[]){
+        
+        Scanner t=new Scanner(System.in);
+        System.out.println("Enter Ad and Bd");
+        int ad=t.nextInt();
+        int bd=t.nextInt();
+        if(ad==0)
+                ad=-1;
+        if(bd==0)
+                bd=-1;
+        System.out.println("Enter length of Code A and Code B");
+        int n=t.nextInt();
+        int ak[]=new int[10];
+        int bk[]=new int[10];
+        System.out.println("Enter code A and B");
+        for(int i=0;i<n;i++){
+                ak[i]=t.nextInt();
+                if(ak[i]==0)
+                        ak[i]=-1;
+        }
+     
+        for(int i=0;i<n;i++){
+                bk[i]=t.nextInt();
+                if(bk[i]==0)
+                        bk[i]=-1;
+        }
+        int as[]=new int[10];
+        int bs[]=new int[10];
+        for(int i=0;i<=n;i++){
+                as[i]=ad*ak[i];
+                bs[i]=bd*bk[i];
+        }
+        for(int i=0;i<n;i++)
+                System.out.print(as[i]+" ");
+        for(int i=0;i<n;i++)
+                System.out.print(bs[i]+" ");
+        int s[]=new int[10];
+        int news[]=new int [10];
+        for(int i=0;i<n;i++)
+                s[i]=as[i]+bs[i];
+        for(int i=0;i<n;i++)
+                news[i]=s[i]*ak[i];
+        int resa=sumof(news);
+        System.out.println("Sum of array1 is"+resa);
+        for(int i=0;i<n;i++)
+                news[i]=s[i]*bk[i];
+        int resb=sumof(news);
+        System.out.println("Sum of array2 is"+resb);        
+        
+        if(resa>0)
+                System.out.println("Data of A is set to 1");
+        else
+                System.out.println("Data of A is set to 0");
+                
+          if(resb>0)
+                System.out.println("Data of B is set to 1");
+        else
+                System.out.println("Data of B is set to 0");
+        }
+        
+        public static int sumof(int a[]){
+        int sum=0;
+        for(int i=0;i<a.length;i++){
+                sum=sum+a[i];
+        }
+        return sum;
+        }
+        
+  }
+         
